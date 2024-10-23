@@ -1,7 +1,9 @@
+/*ce fichier sert a assurer la modularite du projet ainsi d'eviter les erreurs de compilation et la redondance */
+
 #ifndef SORTING_H
 #define SORTING_H
 
-
+/*declaration de tout les fonctions utiliser dans le fichier "sorting.c" qui implimente les methodes de tri */
 void bubble_sort(int arr[], int length, FILE *ptrfile);
 
 void insertion_sort(int arr[], int length, FILE *ptrfile);
