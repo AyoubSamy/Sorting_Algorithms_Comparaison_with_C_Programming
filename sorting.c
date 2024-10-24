@@ -109,6 +109,22 @@ void quick_sort(int arr[], int length, FILE *ptrfile){
 
 }
 
-void swap(int *x, int *y){
-    
+void swap(int* a, int* b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+void selectionSort(int T[], int n)
+{
+    int i , j;
+    for(i=0; i<n-1; i++){
+        int imin=i;
+        for(j=i+1; j<n; j++){
+            if(T[imin] >  T[j])
+              imin = j;  
+        }
+        if(imin != i)
+        swap(&T[i] , &T[imin]);
+    }
 }
