@@ -50,7 +50,7 @@ int main()
     fprintf(gnuplot, "'InsertionSort.txt' using 1:2 smooth bezier title 'InsertionSort (Smoothed)' with lines, \\\n");
     fprintf(gnuplot, "'MergeSort.txt' using 1:2 smooth bezier title 'MergeSort (Smoothed)' with lines, \\\n");
     fprintf(gnuplot, "'SelectionSort.txt' using 1:2 smooth bezier title 'SelectionSort (Smoothed)' with lines, \\\n");
-    fprintf(gnuplot, "'QuickSort.txt' using 1:2 smooth csplines title 'QuickSort (Smoothed)' with lines\n");
+    fprintf(gnuplot, "'QuickSort.txt' using 1:2 smooth bezier title 'QuickSort (Smoothed)' with lines\n");
 
     fclose(gnuplot);
 
