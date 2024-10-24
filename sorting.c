@@ -130,5 +130,5 @@ void selectionSort(int T[], int n, FILE *ptrfile)
     }
 
     executionTime = ((double)(clock() - begin)) / CLOCKS_PER_SEC * 1000;
-    fprintf(ptrfile,"%d\t%lf\n", length, executionTime);
+    fprintf(ptrfile,"%d\t%lf\n", n, executionTime);
 }
