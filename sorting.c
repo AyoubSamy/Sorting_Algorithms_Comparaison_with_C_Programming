@@ -115,8 +115,9 @@ void swap(int* a, int* b) {
     *b = t;
 }
 
-void selectionSort(int T[], int n)
+void selectionSort(int T[], int n, FILE *ptrfile)
 {
+    begin = clock();
     int i , j;
     for(i=0; i<n-1; i++){
         int imin=i;
@@ -127,4 +128,7 @@ void selectionSort(int T[], int n)
         if(imin != i)
         swap(&T[i] , &T[imin]);
     }
+
+    executionTime = ((double)(clock() - begin)) / CLOCKS_PER_SEC * 1000;
+    fprintf(ptrfile,"%d\t%lf\n", length, executionTime);
 }

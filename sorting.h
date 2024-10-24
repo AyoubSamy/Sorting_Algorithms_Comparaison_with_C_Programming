@@ -18,7 +18,7 @@ void quick_sort(int arr[], int length, FILE *ptrfile);
 
 void swap(int *x, int *y);
 
-void selectionSort(int T[], int n);
+void selectionSort(int T[], int n , FILE *ptrfile);
 
 
 
