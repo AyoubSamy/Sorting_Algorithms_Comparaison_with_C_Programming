@@ -21,11 +21,12 @@ int main()
         FILE *merge_file = fopen("MergeSort.txt", "a");
         FILE *quick_file = fopen("QuickSort.txt", "a");
         FILE *selection_file = fopen("SelectionSort.txt", "a");
+        
 
         bubble_sort(temp_array, length, bubble_file);
         insertion_sort(temp_array, length, insertion_file);
         merge_sort(temp_array, length, merge_file);
-        quick_sort(temp_array, length, quick_file);
+        Quicksort(temp_array, length, quick_file);
         selectionSort(temp_array,length, selection_file);
 
         fclose(bubble_file);
@@ -48,8 +49,8 @@ int main()
     fprintf(gnuplot, "plot 'BubbleSort.txt' using 1:2 smooth bezier title 'BubbleSort (Smoothed)' with lines, \\\n");
     fprintf(gnuplot, "'InsertionSort.txt' using 1:2 smooth bezier title 'InsertionSort (Smoothed)' with lines, \\\n");
     fprintf(gnuplot, "'MergeSort.txt' using 1:2 smooth bezier title 'MergeSort (Smoothed)' with lines, \\\n");
-     fprintf(gnuplot, "'SelectionSort.txt' using 1:2 smooth bezier title 'SelectionSort (Smoothed)' with lines, \\\n");
-    //fprintf(gnuplot, "'QuickSort.txt' using 1:2 smooth csplines title 'QuickSort (Smoothed)' with lines\n");
+    fprintf(gnuplot, "'SelectionSort.txt' using 1:2 smooth bezier title 'SelectionSort (Smoothed)' with lines, \\\n");
+    fprintf(gnuplot, "'QuickSort.txt' using 1:2 smooth csplines title 'QuickSort (Smoothed)' with lines\n");
 
     fclose(gnuplot);
 

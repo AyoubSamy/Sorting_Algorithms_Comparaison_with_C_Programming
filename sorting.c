@@ -7,6 +7,13 @@
 clock_t begin; /*declaration de varibale begin de type clock_t(est un type utiliser pour stocker le temp processur) */
 double executionTime;
 
+/*fonction de permutation */
+void swap(int* a, int* b) {
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
 /*implimentation de tri a bulle */
 
 void bubble_sort(int arr[], int length, FILE *ptrfile/*pointeur de type File pour manipuler un fichier */){
@@ -104,17 +111,7 @@ void merge_sorted_arrays(int arr[], int left_index, int middle_index, int right_
         
     }
 }
-
-void quick_sort(int arr[], int length, FILE *ptrfile){
-
-}
-
-void swap(int* a, int* b) {
-    int t = *a;
-    *a = *b;
-    *b = t;
-}
-
+/*implimentation de  tri par selection */
 void selectionSort(int T[], int n, FILE *ptrfile)
 {
     begin = clock();
@@ -131,4 +128,45 @@ void selectionSort(int T[], int n, FILE *ptrfile)
 
     executionTime = ((double)(clock() - begin)) / CLOCKS_PER_SEC * 1000;
     fprintf(ptrfile,"%d\t%lf\n", n, executionTime);
+}
+
+/*implimentation de tri rapide */
+void  Quicksort(int array[],int lenght,FILE *ptrfile){
+begin = clock();
+QuickSort_Recursion(array, 0 ,lenght-1);
+
+executionTime = ((double)(clock() - begin)) / CLOCKS_PER_SEC * 1000;
+fprintf(ptrfile,"%d\t%lf\n", lenght, executionTime);
+
+}
+
+void QuickSort_Recursion(int array[],int low,int high){
+
+if (low < high)
+{
+    int pivot_index = partition(array,low,high);
+    QuickSort_Recursion(array,low,pivot_index-1);
+    QuickSort_Recursion(array,pivot_index+1,high);
+}
+}
+
+int partition(int array[],int low,int high)
+{
+    int pivot_index = low +(rand()%(high-low));
+    if (pivot_index != array[high])
+       swap(&array[pivot_index],&array[high]);
+
+    int pivot_value = array[high];
+
+    int i = low;
+
+    for (int j = low ;j < high ; j++){
+        if(array[j]<= pivot_value){
+            swap(&array[i] , &array[j]);
+            i++;
+        }
+    }
+swap(&array[i],&array[high]); /*repositionner le pivot*/
+  // index i now contains the pivot value, so return this so that the 
+return i ;
 }
